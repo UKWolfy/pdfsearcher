@@ -1,41 +1,45 @@
-PDF Keyword Search and Move Script
-This Python script searches all PDF files in the current directory for specified keywords, logs the results to a text file (results.txt), and moves the processed PDFs to a folder named complete. It’s designed to help automate keyword searches across multiple PDFs and organize the files afterward.
-Features
-Searches all .pdf files in the current directory.
-Reads keywords from a keywords.txt file (one keyword per line).
-Outputs results to results.txt, including the PDF name, keywords found, and page numbers.
-Moves processed PDFs to a complete folder.
-Optional: Highlights keywords in a new PDF (commented out by default).
-Prerequisites
-Python 3.x: Ensure Python is installed (download from python.org).
-Required Libraries: Install these via pip:
-bash
-pip install pdfplumber PyMuPDF
-pdfplumber: Extracts text from PDFs for searching.
-PyMuPDF (imported as fitz): Handles PDF manipulation (e.g., highlighting).
-Setup
-Clone or Download: Place the script (pdf_search.py) in a folder where your PDFs are located.
-Install Dependencies: Run the following command in your terminal/command prompt:
-bash
-pip install pdfplumber PyMuPDF
+markdown
+# PDF Keyword Search and Move Script
+
+This Python script searches all PDF files in the current directory for specified keywords, logs the results to `results.txt`, and moves the processed PDFs to a `complete` folder. Ideal for automating keyword searches across multiple PDFs and organizing files.
+
+## Features
+- Processes all `.pdf` files in the current directory.
+- Reads keywords from `keywords.txt` (one per line).
+- Outputs results to `results.txt` with PDF names, keywords, and page numbers.
+- Moves processed PDFs to a `complete` folder.
+- Optional: Highlights keywords in new PDFs (disabled by default).
+
+## Prerequisites
+- **Python 3.x**: [Download here](https://www.python.org/).
+- **Required Libraries**:
+  - `pdfplumber`: For text extraction.
+  - `PyMuPDF` (aka `fitz`): For PDF manipulation (e.g., highlighting).
+  - Install them with:
+    ```bash
+    pip install pdfplumber PyMuPDF
+    ```
+
+## Setup
+1. **Clone or Download**: Place `pdf_search.py` in a folder with your PDFs.
+2. **Install Dependencies**:
+   ```bash
+   pip install pdfplumber PyMuPDF
 Create keywords.txt:
-Open a text editor (e.g., Notepad, VS Code).
 Add one keyword per line, e.g.:
 complete
 approved
 accepted
-Save as keywords.txt in the same folder as the script.
+Save as keywords.txt in the same folder.
 Usage
-Prepare PDFs: Place all .pdf files you want to process in the same folder as the script.
+Add PDFs: Place .pdf files in the script’s folder.
 Run the Script:
-Open a terminal/command prompt in the folder.
-Execute:
 bash
 python pdf_search.py
-Check Output:
-Console: Shows basic progress (e.g., "Processing complete").
-results.txt: Contains detailed results (e.g., keywords found and page numbers).
-complete folder: Processed PDFs are moved here.
+View Results:
+Console: Shows progress.
+results.txt: Detailed results.
+complete folder: Processed PDFs.
 Example results.txt
 Search Results - 2 PDF(s) Processed
 ==================================================
@@ -51,25 +55,22 @@ PDF: doc2.pdf
 'accepted' not found in the PDF
 --------------------------------------------------
 Optional Highlighting
-To generate highlighted versions of the PDFs:
-Uncomment the following lines in the script:
+To enable highlighting:
+Uncomment these lines in pdf_search.py:
 python
 # highlighted_pdf = os.path.join(output_folder, f"highlighted_{pdf_file}")
 # highlight_keywords(pdf_path, keywords, highlighted_pdf)
-Rerun the script. Highlighted PDFs (e.g., highlighted_doc1.pdf) will appear in the complete folder.
+Rerun the script. Highlighted PDFs (e.g., highlighted_doc1.pdf) will appear in complete.
 Notes
-Case Insensitivity: Searches are case-insensitive (e.g., "Approved" matches "approved").
-Warnings: You might see a CropBox missing warning in the console. This is harmless and suppressed in the script.
-Overwrites: results.txt is overwritten each run. To append instead, change "w" to "a" in the script’s open() calls.
-Errors: If keywords.txt is missing or empty, or if an error occurs, details are written to results.txt.
+Case Insensitive: Matches "Approved" and "approved".
+Warnings: CropBox missing warnings are suppressed but harmless.
+Overwrites: results.txt is overwritten each run. Use "a" instead of "w" in the script to append.
+Errors: Missing keywords.txt or other issues are logged to results.txt.
 Troubleshooting
-Error: "Module not found": Ensure pdfplumber and PyMuPDF are installed.
-No PDFs processed: Check that .pdf files are in the same folder as the script.
-Highlighting fails: Update PyMuPDF with pip install --upgrade PyMuPDF if you encounter issues.
+"Module not found": Verify pdfplumber and PyMuPDF are installed.
+No PDFs processed: Ensure PDFs are in the script’s folder.
+Highlighting issues: Update with pip install --upgrade PyMuPDF.
+Contributing
+Feel free to fork, modify, or submit pull requests!
 License
-This script is provided as-is for personal use. Feel free to modify it to suit your needs!
-How to Use It
-Copy the text above into a file named README.md.
-Place it in the same folder as pdf_search.py.
-Open it in a Markdown viewer (e.g., VS Code, GitHub) or read it as plain text.
-This README should cover everything a user (including future you!) needs to get started. Let me know if you’d like to add more details or adjust anything!
+This project is unlicensed (public domain). Use and adapt it freely!
