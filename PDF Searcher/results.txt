@@ -1,0 +1,15 @@
+Search Results - 2 PDF(s) Processed
+==================================================
+
+PDF: Weekly_Applications_List_31.03.25.pdf
+'complete' found on page(s): 1, 2
+'approved' found on page(s): 5
+'permitted' found on page(s): 3, 4
+'dwelling' found on page(s): 2
+--------------------------------------------------
+PDF: Weekly_Decisions_List_31.03.25.pdf
+'complete' not found in the PDF
+'approved' found on page(s): 6, 8, 9, 10, 11, 13
+'permitted' found on page(s): 2, 3, 4, 5
+'dwelling' found on page(s): 5, 7, 9, 10, 12
+--------------------------------------------------
